@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Palindromas</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<input type="text" id="txt_palabra">
+	<button id="btn_validar">Validar Palabra</button>
+	<p id="resultado"></p>
+	<script>
+	var palabra;
+	$(document).ready(function () {	
+	$("#btn_validar").click(function () {
+		palabra = $("#txt_palabra").val();
+		if(palabra.split(' ').join('')==Al_Reves(palabra).split(' ').join('')){
+			$("#resultado").text("ES un Palindromo");
+		}else{
+			$("#resultado").text("No es un palindromo");
+		}
+
+	});
+	});
+	function Al_Reves (palabra) {
+		var reves="";
+		for (var i = palabra.length; 0 < i  ; i--) {
+				reves+=palabra[i-1];
+		};
+		return reves;
+	}
+	</script>
+</body>
+</html>
